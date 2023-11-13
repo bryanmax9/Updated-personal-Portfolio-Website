@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: black;
+  padding: 1rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  color: white;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .codepen {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+main .codepen .pen-title {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #000067;
+  color: #fff;
+  text-align: center;
+}
+main .codepen .iframe-container {
+  display: flex;
+  justify-content: space-between;
+}
+main .codepen .iframe-container iframe {
+  width: 49%;
+  min-height: 350px;
+}
+
+.back-button-container {
+  text-align: center;
+}
+.back-button-container .back-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.back-button-container .back-button a {
+  color: #333;
+  text-decoration: none;
+}
+.back-button-container .back-button:hover {
+  background-color: #e8e8e8;
+}/*# sourceMappingURL=style.css.map */
