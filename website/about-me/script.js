@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "skill-cloud":
         showInfoWindow(
           "🧑‍💻Programming",
-          "I am a passionate Software Engineer who loves learning new technologies and constantly earn. I love studying programming languages as well as making projects."
+          "I am a passionate Software Engineer who loves learning new technologies and constantly learn. I love studying programming languages as well as making projects."
         );
         break;
       case "skill-security":
