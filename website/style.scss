@@ -50,20 +50,28 @@ header {
 }
 
 .hero {
-  height: 100%;
-  width: 100%;
-  min-height: 100vh;
-  background-image: linear-gradient(
-      245.59deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(128, 128, 128, 0.6) 28.53%,
-      rgba(0, 0, 0, 0.6) 75.52%
-    ),
-    url("https://content.r9cdn.net/rimg/dimg/29/bb/82172db2-city-4461-1670de37ca6.jpg?crop=true&width=1020&height=498");
-  background-repeat: no-repeat;
-  background-size: cover;
-
   position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+
+  // Style for the video
+  video#myVideo {
+    background-color: black;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; // Ensuring the video stays in the background
+    // Apply a filter to lower the brightness
+    filter: brightness(50%);
+  }
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
