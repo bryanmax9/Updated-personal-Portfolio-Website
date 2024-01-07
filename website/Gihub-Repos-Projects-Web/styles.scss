@@ -1,55 +1,62 @@
-$font-stack: Arial, sans-serif;
-$border-color: black;
+$font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$border-color: #333;
 $list-bg: #f9f9f9;
-$item-border: #eee;
+$item-border: #ccc;
 $button-bg: #0366d6;
 $button-text: white;
+$breakpoint-md: 768px;
 
 #video-background {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; // This ensures the video covers the entire area without distortion
-  z-index: -1; // Places the video behind other content
+  object-fit: cover;
+  z-index: -1;
 }
 
 #projects {
   font-family: $font-stack;
-  margin: 80px;
-  padding: 100px;
+  margin: 3% auto;
+  max-width: 1200px;
+  padding: 2%;
   border: 1px solid $border-color;
-  border-radius: 8px;
-  background-color: rgba(
-    $list-bg,
-    0.8
-  ); // Make the background slightly transparent to see the video
+  border-radius: 10px;
+  background-color: rgba($list-bg, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: $breakpoint-md) {
+    margin: 10px;
+    padding: 10px;
+  }
 
   .header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     .logo {
-      width: 50px; // Adjust size as needed
-      height: 50px; // Adjust size as needed
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      margin-right: 10px;
+      margin-right: 15px;
     }
 
-    h2 {
+    h1 {
       margin: 0;
       flex-grow: 1;
+      font-size: 1.5em;
     }
 
     #back-button {
       padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       background-color: $button-bg;
       color: $button-text;
       cursor: pointer;
+      transition: background-color 0.3s;
 
       &:hover {
         background-color: darken($button-bg, 10%);
@@ -59,6 +66,7 @@ $button-text: white;
 
   h2 {
     color: darken($border-color, 20%);
+    font-size: 1.3em;
   }
 
   #project-list {
@@ -69,8 +77,9 @@ $button-text: white;
       margin: 10px 0;
       padding: 10px;
       border: 1px solid $item-border;
-      border-radius: 4px;
+      border-radius: 5px;
       background-color: white;
+      transition: background-color 0.3s;
 
       &:hover {
         background-color: lighten($item-border, 40%);
@@ -86,10 +95,11 @@ $button-text: white;
     button {
       padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       background-color: $button-bg;
       color: $button-text;
       cursor: pointer;
+      transition: background-color 0.3s;
 
       &:hover {
         background-color: darken($button-bg, 10%);
@@ -97,7 +107,7 @@ $button-text: white;
 
       &:disabled {
         background-color: lighten($button-bg, 20%);
-        cursor: default;
+        cursor: not-allowed;
       }
     }
   }

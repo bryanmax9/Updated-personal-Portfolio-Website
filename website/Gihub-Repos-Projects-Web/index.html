@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bryan - Github Repositories (bryanmax9)</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Compiled SCSS -->
   </head>
   <body>
     <video id="video-background" autoplay muted loop>
@@ -15,20 +14,19 @@
       />
       Your browser does not support this video.
     </video>
-    <div id="projects">
-      <div class="header">
-        <img src="./assets/github-Logo.png" alt="Github-Logo" class="logo" />
-        <h2>Bryan Tineo (bryanmax9) Repo</h2>
+    <div id="projects" role="main">
+      <header class="header">
+        <img src="./assets/github-Logo.png" alt="Github Logo" class="logo" />
+        <h1>Bryan Tineo (bryanmax9) Repo</h1>
         <button id="back-button">Back to Main Site</button>
-      </div>
+      </header>
       <h2>My GitHub Projects</h2>
-      <ul id="project-list"></ul>
-      <div id="pagination">
+      <ul id="project-list" aria-label="List of Projects"></ul>
+      <nav id="pagination" aria-label="Pagination">
         <button id="prev">Previous</button>
         <button id="next">Next</button>
-      </div>
+      </nav>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
