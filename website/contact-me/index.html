@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✉️ Contact Me Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="/website/index.html" class="home-button">Home</a>
+    <section class="contact">
+      <div class="contact-form">
+        <h1>Contact <span>Me👻</span></h1>
+        <p>
+          🧑‍💻I'm here 24/7 to assist with software queries including front-end,
+          UI/UX, app development (Android & iOS), REST APIs, cybersecurity, and
+          more. Feel free to reach out anytime for expert guidance.
+        </p>
+        <form action="https://formspree.io/f/mwkgqnjk" method="POST">
+          <input type="text" placeholder="Your Name" required />
+          <input type="text" placeholder="Your Last Name" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <textarea
+            name="Message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <input type="submit" name="" value="Submit" class="btn" />
+        </form>
+      </div>
+
+      <div class="contact-img">
+        <spline-viewer
+          url="https://prod.spline.design/No8LwpLWWowg61lD/scene.splinecode"
+        ></spline-viewer>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"
+    ></script>
+  </body>
+</html>

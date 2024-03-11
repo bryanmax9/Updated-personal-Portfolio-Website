@@ -282,3 +282,67 @@ section {
     height: auto;
   }
 }
+
+@media (max-width: 750px) {
+  header {
+    padding: 15px 5%;
+
+    .logo {
+      font-size: 24px; // Smaller logo font
+    }
+
+    #menu-icon {
+      display: block; // Show the menu icon
+      z-index: 1001; // Ensure it's above other elements
+    }
+
+    .navlist {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100vw; // Use viewport width to cover the screen
+      height: 100vh; // Use viewport height to cover the screen
+      background: rgba(0, 0, 0, 0.9); // Semi-transparent background
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0; // Hide by default
+      visibility: hidden; // Hide by default
+      transform: translateX(100%); // Start off-screen
+      transition: all 0.3s ease; // Transition for opacity and transform
+    }
+
+    .navlist.open {
+      opacity: 1; // Show the navlist
+      visibility: visible; // Make it visible
+      transform: translateX(0); // Move it into view
+    }
+  }
+
+  .hero {
+    padding: 30px 5%; // Adjust padding
+
+    .hero-text {
+      h1 {
+        font-size: 50px; // Smaller hero header font
+      }
+      h4 {
+        font-size: 16px; // Smaller subheader font
+      }
+      h5,
+      p {
+        font-size: 14px; // Smaller paragraph font
+      }
+      a {
+        padding: 10px 20px; // Adjust button padding
+        font-size: 13px; // Adjust button font size
+      }
+    }
+
+    .hero-img img {
+      width: 80%; // Adjust image width
+      margin: 0 auto 20px; // Center the image and add margin below
+    }
+  }
+}
