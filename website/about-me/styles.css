@@ -46,7 +46,7 @@ html {
   width: 60vw;
   height: 60vh;
   background-color: black;
-  background-image: url("./assets/bedroom.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/bedroom.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

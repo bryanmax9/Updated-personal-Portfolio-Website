@@ -1,0 +1,232 @@
+// General Reset and Variables
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+// Header navigation styling
+nav {
+  width: 100%;
+  background: #dfeeff;
+  ul.navlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; // Align navigation items to the right
+    li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      &:hover {
+        color: #dfeeff;
+        background-color: #111;
+      }
+    }
+  }
+}
+
+// Hero section with video overlay
+.hero {
+  position: relative;
+  z-index: 1; // Ensures hero section is under the SVG
+  overflow: hidden; // Added to prevent any overflow due to SVG
+
+  .top-svg {
+    display: block;
+    position: absolute;
+    top: -4.5em; // Align to the top of the hero section
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  .bottom-svg {
+    display: block;
+    position: absolute;
+    bottom: 0; // Align to the bottom of the hero section
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1; // Same z-index as top-svg to keep consistency
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(black, 0.7), rgba(gray, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: white;
+      font-size: 2rem;
+      z-index: 9999;
+    }
+  }
+  .hero-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+// Gaming Section
+.games-section {
+  background-color: #dfeeff;
+  color: black;
+  padding: 2rem;
+  text-align: center; // Centers all inline and inline-block elements
+  .games-header-image {
+    width: 30vw; // Adjust the image width as needed
+    height: auto; // Keep the aspect ratio of the image
+    margin: 1em auto 2rem; // Centers the image horizontally and adds space above and below
+  }
+
+  .game-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .game-description {
+      flex-basis: 50%;
+      padding: 1rem;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: #604432;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+        color: #604432;
+      }
+    }
+  }
+}
+
+// Website Section
+.websites-section {
+  position: relative;
+  background-color: #f0f0f0; // You can adjust the background color
+
+  h2 {
+    position: relative;
+    font-family: "Abolition", sans-serif; // Assuming 'Abolition' is imported correctly
+    color: #333;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1em;
+    z-index: 1;
+  }
+
+  .website-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1; // Ensures hero section is under the SVG
+    overflow: hidden; // Added to prevent any overflow due to SVG
+    padding-bottom: 10rem;
+    .top-svg-container {
+      position: absolute;
+      top: -1px; // Adjust this value if there is still a gap
+      left: 0;
+      width: 100%;
+      z-index: -1; // Ensure the SVG is behind the content but above the background
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .website-description {
+      flex-basis: 45%;
+      padding: 1rem;
+
+      h3 {
+        font-size: 2rem;
+        color: #5c5c5c; // A color that stands out but is not too bright
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #5c5c5c;
+      }
+
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+    }
+
+    .website-iframe {
+      flex-basis: 45%;
+      border: none; // No border for a clean look
+      width: 30em; // You can adjust the height as needed
+      height: 30em;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+    }
+  }
+}
+// Gallery styles
+.gallery-section {
+  background-color: #dfeeff;
+  padding: 4rem;
+  text-align: center;
+
+  .gallery-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Three columns for three images
+    gap: 2rem; // Space between the gallery items
+    justify-items: center;
+    align-items: center;
+  }
+
+  .gallery-item {
+    max-width: calc(
+      76.333% - 2rem
+    ); // Max width for each item with space deducted for the gap
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
