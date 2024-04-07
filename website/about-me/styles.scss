@@ -116,3 +116,49 @@ html {
   height: 0;
   overflow: hidden;
 }
+
+//media queries for screen Sizes
+
+@media (max-width: 1264px) {
+  #character {
+    height: 190px;
+    width: 190px;
+  }
+}
+
+@media (max-width: 1130px) {
+  #page-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  #page-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  #game-area {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 560px) {
+  #page-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  #page-title {
+    font-size: 0.6rem;
+  }
+  #game-area {
+    width: 95vw;
+  }
+  #character {
+    height: 160px;
+    width: 160px;
+  }
+}
