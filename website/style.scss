@@ -142,6 +142,35 @@ section {
   margin-left: 20px;
 }
 
+.hero-text .container {
+  display: inline-block;
+
+  & .texto {
+    border-right: 5px solid white; // Initial border for typing effect
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1.3s steps(11, end),
+      cursor 0.6s step-end infinite alternate;
+  }
+}
+
+// cursor blinking animation
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+// typing effect
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; // Ensure the full text width is considered
+  }
+}
+
 .icons {
   position: absolute;
   top: 50%;
