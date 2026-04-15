@@ -97,12 +97,12 @@ video { display: block; }
 .nav-pill {
   background: #000;
   border-radius: 0 0 1rem 1rem;
-  padding: 10px 40px;
+  padding: 10px 20px;
 }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 20px;
   list-style: none;
 }
 .nav-links a {
@@ -114,6 +114,7 @@ video { display: block; }
 
 @media (min-width: 768px) {
   .nav-pill { padding: 10px 40px; border-radius: 0 0 1.5rem 1.5rem; }
+  .nav-links { gap: 48px; }
   .nav-links a { font-size: 0.875rem; }
 }
 
@@ -164,25 +165,47 @@ video { display: block; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: end;
-  padding: 20px 20px 32px;
-  gap: 16px;
-}
-@media (min-width: 768px) { .hero-content { padding: 32px 32px 40px; } }
-
-.hero-title-col { grid-column: span 8; }
-.hero-desc-col {
-  grid-column: span 4;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-bottom: 8px;
+  align-items: flex-start;
+  padding: 16px 16px 24px;
+  gap: 10px;
+}
+@media (min-width: 640px) {
+  .hero-content {
+    padding: 20px 20px 32px;
+    gap: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: end;
+    padding: 32px 32px 40px;
+    gap: 16px;
+  }
+}
+
+.hero-title-col { width: 100%; }
+.hero-desc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero-title-col { grid-column: span 8; width: auto; }
+  .hero-desc-col {
+    grid-column: span 4;
+    gap: 20px;
+    padding-bottom: 8px;
+    width: auto;
+  }
 }
 
 .hero-title {
-  font-size: clamp(80px, 18vw, 240px);
+  font-size: clamp(48px, 16vw, 240px);
   font-weight: 500;
   line-height: 0.85;
   letter-spacing: -0.06em;
@@ -343,7 +366,7 @@ video { display: block; }
 /* ── Profile & Resume ───────────────────────────────────────────────────── */
 .profile-section {
   background: #000;
-  padding: 120px 16px;
+  padding: 80px 16px;
 }
 @media (min-width: 768px) { .profile-section { padding: 130px 24px; } }
 
@@ -396,8 +419,9 @@ video { display: block; }
   position: relative;
   overflow: hidden;
   flex: 1;
-  min-height: 320px;
+  min-height: 260px;
 }
+@media (min-width: 640px) { .profile-photo-wrap { min-height: 320px; } }
 @media (min-width: 768px) { .profile-photo-wrap { min-height: 400px; } }
 
 .profile-photo-wrap img {
@@ -475,9 +499,10 @@ video { display: block; }
 .resume-preview-wrap {
   flex: 1;
   position: relative;
-  min-height: 480px;
+  min-height: 260px;
   background: #0e0e0e;
 }
+@media (min-width: 640px) { .resume-preview-wrap { min-height: 380px; } }
 @media (min-width: 768px) { .resume-preview-wrap { min-height: 640px; } }
 
 /* Subtle scanline overlay for futuristic feel */
@@ -507,6 +532,17 @@ video { display: block; }
   z-index: 1;
 }
 
+/* On small screens PDF embeds don't render — hide and show fallback instead */
+@media (max-width: 639px) {
+  .resume-preview-wrap embed,
+  .resume-preview-wrap iframe {
+    display: none;
+  }
+  .resume-fallback {
+    display: flex !important;
+  }
+}
+
 /* Fallback message when embed not supported */
 .resume-fallback {
   display: none;
@@ -515,30 +551,46 @@ video { display: block; }
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   color: var(--cream-dim);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   text-align: center;
-  padding: 24px;
+  padding: 32px 24px;
+  background: #0e0e0e;
+}
+.resume-fallback svg {
+  opacity: 0.5;
+}
+.resume-fallback span {
+  max-width: 200px;
+  line-height: 1.5;
+  color: rgba(225,224,204,0.45);
 }
 
 .resume-footer {
-  padding: 20px 24px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
   border-top: 1px solid rgba(225,224,204,0.06);
 }
+@media (min-width: 640px) { .resume-footer { padding: 20px 24px; flex-wrap: nowrap; } }
+
 .resume-footer-label {
   font-size: 0.75rem;
   color: var(--cream-dim);
+  min-width: 0;
 }
 .resume-footer-label strong {
   display: block;
   color: var(--cream);
   font-size: 0.875rem;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Skills ─────────────────────────────────────────────────────────────── */
