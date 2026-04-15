@@ -777,6 +777,23 @@ video { display: block; }
   color: var(--cream);
 }
 
+/* GitHub stat card — CSS-only replacement for the duplicate video */
+.github-stat-card {
+  background: radial-gradient(ellipse at 40% 60%, #0d1117 0%, #010409 100%);
+}
+.github-stat-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 30% 40%, rgba(63,185,80,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 70% 70%, rgba(88,166,255,0.08) 0%, transparent 70%);
+  animation: githubPulse 5s ease-in-out infinite alternate;
+}
+@keyframes githubPulse {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
 /* Project card */
 .proj-card-inner {
   height: 256px;

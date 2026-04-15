@@ -1,0 +1,29 @@
+# Netlify _headers — static asset caching
+
+# Fonts — immutable (hash-named in practice; 1-year cache)
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Video — immutable (content rarely changes)
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images — immutable
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# PDF — moderate cache (may be updated)
+/assets/*.pdf
+  Cache-Control: public, max-age=604800
+
+# CSS & JS — short cache so deploys pick up quickly
+/assets/style.css
+  Cache-Control: public, max-age=86400
+/assets/script.js
+  Cache-Control: public, max-age=86400
+
+# HTML — no cache so visitors always get the latest
+/
+  Cache-Control: no-cache
+/*.html
+  Cache-Control: no-cache

@@ -72,6 +72,11 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
 
   <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- ── Critical resource hints ─────────────────────────────────────────── -->
+  <link rel="preload" href="assets/video/hero.mp4" as="video" type="video/mp4" />
+  <link rel="preload" href="assets/fonts/Almarai-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="assets/fonts/InstrumentSerif-Italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
 </head>
 <body>
 
@@ -370,12 +375,10 @@
 
     <div class="projects-grid">
 
-      <!-- Video card -->
+      <!-- GitHub stat card (CSS-only, no extra video request) -->
       <div class="feature-card" data-delay="0">
-        <div class="video-card-inner">
-          <video autoplay loop muted playsinline>
-            <source src="assets/video/hero.mp4" type="video/mp4" />
-          </video>
+        <div class="video-card-inner github-stat-card">
+          <div class="github-stat-glow"></div>
           <div class="video-card-gradient"></div>
           <p class="video-card-label">110+ repos on GitHub.</p>
         </div>
